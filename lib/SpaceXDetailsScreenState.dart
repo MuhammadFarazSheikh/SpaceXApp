@@ -24,8 +24,9 @@ class SpaceXDetailsScreenState extends State<SpacexDetailscreen> {
         builder: (context,snapshot)
         {
           if (snapshot.hasData) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            return Padding(
+              padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
+              child: Column(
                 children: <Widget>[
                   Container(
                     color: Colors.grey,
@@ -34,19 +35,19 @@ class SpaceXDetailsScreenState extends State<SpacexDetailscreen> {
                     child: Text(
                       'SpaceX Company',
                       style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Text('Name = '+snapshot.data!.name!),
-                      Text('Founder = '+snapshot.data!.founder!),
-                      Text('Founded = '+snapshot.data!.founded!.toString())
-                    ]
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Text('Name = '+snapshot.data!.name!),
+                        Text('Founder = '+snapshot.data!.founder!),
+                        Text('Founded = '+snapshot.data!.founded!.toString())
+                      ]
                   ),
 
                   Row(
@@ -150,10 +151,16 @@ class SpaceXDetailsScreenState extends State<SpacexDetailscreen> {
                     child: Text(snapshot.data!.summary!),
                   )
                 ],
-              );
+              ),
+            );
           }
           // By default, show a loading spinner.
-          return const CircularProgressIndicator();
+          return Center(
+            child: CircularProgressIndicator(
+              color: Colors.grey,
+              strokeWidth: 5,
+            ),
+          );
         },
       );
   }
