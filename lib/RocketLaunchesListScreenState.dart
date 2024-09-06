@@ -28,7 +28,12 @@ class RocketLaunchesListScreenState extends State<RocketLaunchesListScreen> {
           {
             return new RocketsListUI(list: snapshot.data!);
           }
-          return CircularProgressIndicator();
+          return Center(
+            child: CircularProgressIndicator(
+              color: Colors.grey,
+              strokeWidth: 5,
+            ),
+          );
         }
     );
   }
