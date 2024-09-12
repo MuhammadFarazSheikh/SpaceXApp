@@ -14,6 +14,19 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: Builder(
+          builder: (context)
+          {
+            return IconButton(
+              onPressed: (){
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Icon(Icons.menu),
+            );
+          },
+        ),
+      ),
       body: bottomNavigationScreens[bottomNavigationCurrentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: bottomNavigationCurrentIndex,
@@ -32,6 +45,16 @@ class HomeScreenState extends State<HomeScreen> {
               label: 'RocketsList'
           )
         ],
+      ),
+      drawer: Drawer(
+        child: Text(
+          'SpaceXApp',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 15,
+            fontWeight: FontWeight.bold
+          ),
+        ),
       ),
     );
   }

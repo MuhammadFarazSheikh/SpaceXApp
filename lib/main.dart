@@ -1,19 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:space_x_app/HomeScreen.dart';
+import 'package:space_x_app/SplashScreen.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'SpaceXApp',
-      home: HomeScreen()
-    );
-  }
+  runApp(SplashScreen());
 }

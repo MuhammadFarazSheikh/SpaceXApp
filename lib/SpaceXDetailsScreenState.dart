@@ -24,9 +24,7 @@ class SpaceXDetailsScreenState extends State<SpacexDetailscreen> {
         builder: (context,snapshot)
         {
           if (snapshot.hasData) {
-            return Padding(
-              padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-              child: Column(
+            return Column(
                 children: <Widget>[
                   Container(
                     color: Colors.grey,
@@ -151,8 +149,7 @@ class SpaceXDetailsScreenState extends State<SpacexDetailscreen> {
                     child: Text(snapshot.data!.summary!),
                   )
                 ],
-              ),
-            );
+              );
           }
           // By default, show a loading spinner.
           return Center(
